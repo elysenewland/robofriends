@@ -5,11 +5,11 @@ their contact information.
 
 ## Dependencies
 
-* [React](https://create-react-app.dev/docs/getting-started/)\
+* [React](https://create-react-app.dev/docs/getting-started/)
 * [Tachyons](https://tachyons.io/)
 
 ### Install
-Create React App: npx create-react-app my-app
+Create React App: npx create-react-app my-app\
 Other dependences: npm install
 
 #### Local Host 
