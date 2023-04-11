@@ -8,17 +8,17 @@ their contact information.
 * [React](https://create-react-app.dev/docs/getting-started/)
 * [Tachyons](https://tachyons.io/)
 
-### Install
+## Install
 Create React App: npx create-react-app my-app\
 Other dependences: npm install
 
-#### Local Host 
+## Local Host 
 npm start\
 \
 Runs the app in development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-#### Prodution Build
+## Prodution Build
 npm run build\
 
 Creates a minified build of the app for production.
