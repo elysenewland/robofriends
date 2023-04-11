@@ -9,8 +9,7 @@ their contact information.
 * [Tachyons](https://tachyons.io/)
 
 ## Install
-Create React App: npx create-react-app my-app\
-Other dependences: npm install
+npm install
 
 ## Local Host 
 npm start\
