@@ -3,33 +3,30 @@ import CardList from "../components/CardList";
 import SearchBox from "../components/SearchBox";
 import "./App.css"
 import Scroll from "../components/Scroll"
-import ErrorBoundary from "../components/ErrorBoundary";
-;
-// Create states in our app for users in robot array and input in search field. Must use constructor
+
+// Initialize app with constructor and super. Set state to include empty robot friends array and empty string for the Search Field
 class App extends Component {
     constructor() {
-        // Super is used to call the constructor of its parent class
         super()
         this.state = {
-            // whatever we want our state to have
-            robots: [ ],
-            searchField:" "
+            robots: [],
+            searchField:""
         }
     }
 
-    // Fetch the user data formthe url, set users equal to the user from the url/robot array
+    // Fetch the user user data from the API. Set users equal to the users from API
     componentDidMount() {
         fetch('https://jsonplaceholder.typicode.com/users')
-        .then(response=> response.json())
-        .then(users => this.setState({robots: users}));
+            .then(response=> response.json())
+            .then(users => this.setState({robots: users}));
     }
 
-    // Event to change the state of the searchField based on user's input
+    // Set state to reflect the user's input in the Search Field
     onSearchChange = (event) => {
         this.setState({searchField: event.target.value})
     }
 
-    // Filter the robots based on what has been input by the user in the searchfield
+    // Filter the robots based on what has been input by the user in the Search Field
     render() {
         const {robots, searchField} = this.state;
         const filteredRobots = robots.filter(robot => {
@@ -40,18 +37,16 @@ class App extends Component {
         return !robots.length ?
             <h1>Loading</h1> :
             (
-            // Return the robots that were filtered based on the user's input. Scroll component added to keep search bar at top of page when scrolling.
+            // Components called
             <div className="tc">
                 <h1 className="f1">RoboFriends</h1>
                 <SearchBox searchChange={this.onSearchChange} />
                 <Scroll>
-                    <ErrorBoundary>
-                        <CardList robots={filteredRobots}/>
-                    </ErrorBoundary>
+                    <CardList robots={filteredRobots}/>
                 </Scroll>
             </div> 
             );
-        }
-    }             
+    }
+}             
 
 export default App;
