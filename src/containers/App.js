@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import CardList from "../components/CardList";
 import SearchBox from "../components/SearchBox";
 import "./App.css"
-import Scroll from "../components/Scroll"
 
 // Initialize app with constructor and super. Set state to include empty robot friends array and empty string for the Search Field
 class App extends Component {
@@ -39,11 +38,13 @@ class App extends Component {
             (
             // Components called
             <div className="tc">
-                <h1 className="f1">RoboFriends</h1>
-                <SearchBox searchChange={this.onSearchChange} />
-                <Scroll>
+                <header>
+                    <h1 className="f1">RoboFriends</h1>
+                    <SearchBox searchChange={this.onSearchChange} />
+                </header>
+                <main>
                     <CardList robots={filteredRobots}/>
-                </Scroll>
+                </main>
             </div> 
             );
     }
