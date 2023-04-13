@@ -2,6 +2,8 @@
 
 A web app that enables users to search their robot friends by name built using React.
 
+[View live project 🤖](https://robofriends-gules.vercel.app).
+
 ## Core Dependencies
 
 * [Node](https://nodejs.org/en)
